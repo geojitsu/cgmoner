@@ -72,8 +72,8 @@ if __name__ == "__main__":
     # @todo use real logging
     print command
     avalons = ['10.38.95.50', '10.38.95.51']
-    client = CgminerClient()
-    client.command('10.38.95.51', 4028, command)
+    #client = CgminerClient()
+    #client.command('10.38.95.51', 4028, command)
     if command == 'devs':
         for ava in avalons:
             client = CgminerClient()
@@ -89,3 +89,7 @@ if __name__ == "__main__":
                 print oobdecud
             except Exception, e:
                 print '[-] Error: Out of bounds: %s\n' % e
+    else:
+        for ava in avalons:
+            client = CgminerClient()
+            print client.command(ava, 4028, command)
